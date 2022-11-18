@@ -25,7 +25,7 @@ public class DeletingBlackNumbers {
             System.out.println("Ваше число без четных цифр: "+p );
 }
 }
-    //функция удаления четных цифр числа
+     //функция удаления четных цифр числа
 public static int dataA(int Num){ 
 int x = Num;
 int res = 0;
