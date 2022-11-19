@@ -12,12 +12,9 @@ public class Program {
 public static void main(String[] args) {
 
 int a=0;
-
 try (Scanner in = new Scanner(System.in)) {
-
 System.out.println("Введите целое положительное число: ");
 a = in.nextInt();
-
 String p = prime(a);
 System.out.println("Ваше число "+p );
 }
