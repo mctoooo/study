@@ -50,7 +50,7 @@ int i=0;
 int L=1;
 int n=1;
 int max=repit[0];
-for (i=1;i<repit.length;i++){// находим максимальное число
+for (i=1;i<repit.length;i++){// находим максимальное число повторов
 if(max<repit[i]){
 max=repit[i];
 }
