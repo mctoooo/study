@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package com.mycompany.program2;
+package com.mycompany.program;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 
 
-public class Program2 {
+public class Program {
     public static void PrintArrayToConsole(int [][]Mx){
 if(Mx != null){
 for(int ix = 0;ix < Mx.length; ix++){ //функция распечатки массива
