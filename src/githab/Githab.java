@@ -23,6 +23,24 @@ drobB = new Fraction(-3,-2);
 drobC = new Fraction(1,4);
 drobD = new Fraction(-5,4);
 
+//массив объектов
+
+Fraction[]ftArr = null;
+ftArr = new Fraction[10]; // массив ссылок из 10 элементов
+for (ix-0; ix<ftArr.length;ix++)
+{
+ftArr[ix]= new Fraction[ix];
+}
+//  for-each
+
+for( Fraction fx : ftArr)
+{
+    if(fx==null)
+        System.out.println("null");
+   else             
+ System.out.println(fx.toFormatString());
+}
+
 System.out.println("Count of Objects = "+ Fraction.getCountObject());
 
 if(drobA == drobB)
