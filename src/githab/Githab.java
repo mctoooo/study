@@ -27,9 +27,9 @@ drobD = new Fraction(-5,4);
 
 Fraction[]ftArr = null;
 ftArr = new Fraction[10]; // массив ссылок из 10 элементов
-for (ix-0; ix<ftArr.length;ix++)
+for (int ix=0; ix<ftArr.length;ix++)
 {
-ftArr[ix]= new Fraction[ix];
+ftArr[ix]= new Fraction(ix,ix+1);
 }
 //  for-each
 
@@ -56,13 +56,13 @@ System.out.println("Not Equal");
 
 
 Fraction drobF = drobA.add(drobB);
-System.out.println("Count of Objects = "+ Fraction.getCountObject());
+//System.out.println("Count of Objects = "+ Fraction.getCountObject());
 drobF = drobA.dev(drobB);
 System.out.println("drobA / drobC = " +drobF.toFormatString());
-System.out.println("Count of Objects = "+ Fraction.getCountObject());
+//System.out.println("Count of Objects = "+ Fraction.getCountObject());
 drobF = drobA.subtraction(drobC);
 System.out.println("drobA + drobC = " +drobF.toFormatString());
-System.out.println("Count of Objects = "+ Fraction.getCountObject());
+//System.out.println("Count of Objects = "+ Fraction.getCountObject());
 drobF = drobA.multiplication(drobC);
 System.out.println("drobA * drobC = " +drobF.toFormatString());
 
