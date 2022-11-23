@@ -11,12 +11,13 @@ public class Fraction {
 private int ch;
 private int zn;
 static private int countObj = 0;
-private int nod = 1;
+private int nod ;
 
 Fraction(){
 ch = 0;
 zn = 1;
 countObj++;
+nod=1;
 }
 
 Fraction(int chA, int znA){
@@ -25,12 +26,13 @@ if(znA == 0)
 {
 ch = 0;
 zn = 1;
+nod=1;
 }
 else
 {
 ch = chA;
 zn = znA;
-
+nod = Nod(ch,zn);
 }
 if(chA<0&&znA<0){
 ch = Math.abs(chA);
@@ -39,6 +41,7 @@ zn = Math.abs(znA);
 if(chA>0&&znA<0){
 ch = -chA;
 zn = Math.abs(znA);
+nod = Nod(ch,zn);
 }
 }
 
@@ -129,5 +132,29 @@ Fraction res = new Fraction (ch ,zn);
 return res;
 }
 }
-
+public static void reduse(Fraction objF)
+{
+    if(objF!=null|| objF.ch!=0){
+        Fraction rez = new Fraction ( objF.ch/objF.nod,objF.zn/Nod);
+return res;
+  
+chA =chA/Nod;
+znA=znA/Nod;
+}
+// метод нахождения наибольшего общего делителя
+public static int Nod(int chA,int znA)
+{
+ int nod = 1;
+int a =Math.abs(chA);
+ int b = Math.abs(znA);
+while (chA != 0 && znA != 0)
+{
+    if (chA > znA)
+        a = a % b; 
+    else
+       b = b % a;
+    }
+nod = a + b;
+return nod;
+}
 }

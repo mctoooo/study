@@ -56,12 +56,13 @@ System.out.println("Not Equal");
 
 
 Fraction drobF = drobA.add(drobB);
+System.out.println("drobA + drobB = " +drobF.toFormatString());
 //System.out.println("Count of Objects = "+ Fraction.getCountObject());
 drobF = drobA.dev(drobB);
 System.out.println("drobA / drobC = " +drobF.toFormatString());
 //System.out.println("Count of Objects = "+ Fraction.getCountObject());
 drobF = drobA.subtraction(drobC);
-System.out.println("drobA + drobC = " +drobF.toFormatString());
+System.out.println("drobA - drobC = " +drobF.toFormatString());
 //System.out.println("Count of Objects = "+ Fraction.getCountObject());
 drobF = drobA.multiplication(drobC);
 System.out.println("drobA * drobC = " +drobF.toFormatString());
