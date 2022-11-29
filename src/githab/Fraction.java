@@ -174,23 +174,25 @@ public  void reduse(Fraction objF)
      objF.zn=objF.zn/nod;
 }
 // метод нахождения наибольшего общего делителя
-public  static int Nod(int chA,int znA)
+private  static  int Nod(int chA,int znA)
   {
-     int Nod = 1;
-     int a =Math.abs(chA);
-     int b = Math.abs(znA);
-     if(chA==0)
+        int nod = 1;
+        int a = Math.abs(chA);
+        int b = Math.abs(znA);
+     if(chA==0||znA==0)
           return 1;
-     
-         while (a != 0 ^ b != 0)
+     else
+         do 
              {
              if (a > b )
                  a = a % b;
              else
                  b = b % a;
+             
              }
-        Nod = a + b;
-        System.out.println("Nod = " +Nod);
-     return Nod;
+         while (a == 0 || b == 0);
+         nod = a + b;
+         System.out.println("Nod = " +nod);
+     return nod;
   }
 }
