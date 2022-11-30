@@ -31,19 +31,19 @@ if(znA == 0)
 else
 {
      int nod = Nod(chA,znA);
-     ch = flagCl==false||flagObj==false?(chA):(chA/nod);
-     zn = flagCl==false||flagObj==false?(znA):(znA/nod);
+     ch = flagCl==false&&flagObj==false?(chA):(chA/nod);
+     zn = flagCl==false&&flagObj==false?(znA):(znA/nod);
 
 }
 if(chA<0&&znA<0){
      int nod = Nod(chA,znA);
-     ch = flagCl==false||flagObj==false?(Math.abs(chA)):(Math.abs(chA)/nod);
-     zn = flagCl==false||flagObj==false?(Math.abs(znA)):(Math.abs(znA)/nod);
+     ch = flagCl==false&&flagObj==false?(Math.abs(chA)):(Math.abs(chA)/nod);
+     zn = flagCl==false&&flagObj==false?(Math.abs(znA)):(Math.abs(znA)/nod);
 }
 if(chA>0&&znA<0){
      int nod = Nod(chA,znA);
-     ch = flagCl==false||flagObj==false?(-chA):(-(chA/nod));
-     zn = flagCl==false||flagObj==false?(Math.abs(znA)):(Math.abs(znA)/nod);
+     ch = flagCl==false&&flagObj==false?(-chA):(-(chA/nod));
+     zn = flagCl==false&&flagObj==false?(Math.abs(znA)):(Math.abs(znA)/nod);
 }
 }
 void setflagCl(boolean newFlagCl){
@@ -64,7 +64,7 @@ Fraction add(Fraction objF)
      {
      Fraction res = new Fraction (ch * objF.zn + objF.ch * zn,zn * objF.zn);
          if(flagCl==true){
-            res.reduse(res);
+            res.reduse();
             }
      return res;
 
@@ -123,7 +123,7 @@ Fraction dev(Fraction objF)throws Exception
          Fraction res = new Fraction (ch * objF.zn ,zn * objF.ch);
      if(flagCl==true)
          {
-         res.reduse(res);
+         res.reduse();
          }
      return res;
      }
@@ -134,7 +134,7 @@ Fraction subtraction(Fraction objF)
          Fraction res = new Fraction (ch * objF.zn - objF.ch * zn,zn * objF.zn);
      if(flagCl==true)
          {
-         res.reduse(res);
+         res.reduse();
          }
      return res;
      }
@@ -153,7 +153,7 @@ if(objF!=null)
      Fraction res = new Fraction (ch * objF.ch,zn * objF.zn);
     if(flagCl==true)
          {
-         res.reduse(res);
+         res.reduse();
          
          }
          return res;
@@ -167,22 +167,22 @@ else
     }
 }
 // метод сокрашения дроби
-public  void reduse(Fraction objF)
+public  void reduse()
 {
-     int nod = Nod(objF.ch,objF.zn);  
-     objF.ch = objF.ch/nod;
-     objF.zn=objF.zn/nod;
+     int nod = Nod(ch,zn);  
+     ch = ch/nod;
+     zn=zn/nod;
 }
 // метод нахождения наибольшего общего делителя
-private  static  int Nod(int chA,int znA)
+public  static  int Nod(int chA,int znA)
   {
         int nod = 1;
         int a = Math.abs(chA);
         int b = Math.abs(znA);
      if(chA==0||znA==0)
           return 1;
-     else
-         do 
+     
+         while (a != 0 && b != 0) 
              {
              if (a > b )
                  a = a % b;
@@ -190,9 +190,9 @@ private  static  int Nod(int chA,int znA)
                  b = b % a;
              
              }
-         while (a == 0 || b == 0);
+         
          nod = a + b;
-         System.out.println("Nod = " +nod);
+        // System.out.println("Nod = " +nod);
      return nod;
   }
 }
