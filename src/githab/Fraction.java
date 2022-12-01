@@ -31,22 +31,22 @@ if(znA == 0)
 else
 {
      int nod = Nod(chA,znA);
-     ch = flagCl==false&&flagObj==false?(chA):(chA/nod);
-     zn = flagCl==false&&flagObj==false?(znA):(znA/nod);
+     ch = flagCl==false?(chA):(chA/nod);
+     zn = flagCl==false?(znA):(znA/nod);
 
 }
 if(chA<0&&znA<0){
      int nod = Nod(chA,znA);
-     ch = flagCl==false&&flagObj==false?(Math.abs(chA)):(Math.abs(chA)/nod);
-     zn = flagCl==false&&flagObj==false?(Math.abs(znA)):(Math.abs(znA)/nod);
+     ch = flagCl==false?(Math.abs(chA)):(Math.abs(chA)/nod);
+     zn = flagCl==false?(Math.abs(znA)):(Math.abs(znA)/nod);
 }
 if(chA>0&&znA<0){
      int nod = Nod(chA,znA);
-     ch = flagCl==false&&flagObj==false?(-chA):(-(chA/nod));
-     zn = flagCl==false&&flagObj==false?(Math.abs(znA)):(Math.abs(znA)/nod);
+     ch = flagCl==false?(-chA):(-(chA/nod));
+     zn = flagCl==false?(Math.abs(znA)):(Math.abs(znA)/nod);
 }
 }
-void setflagCl(boolean newFlagCl){
+public static void setflagCl(boolean newFlagCl){
      flagCl=newFlagCl;
      }
 
@@ -120,17 +120,33 @@ Fraction dev(Fraction objF)throws Exception
      {
      if(objF==null || objF.ch==0)
          throw new Exception("Devide error in Fraktion");
+     if(this.flagObj==true)
+    {
+        this.reduse();
+    }
+     if(objF.flagObj==true)
+     {
+         objF.reduse();
+     }
          Fraction res = new Fraction (ch * objF.zn ,zn * objF.ch);
      if(flagCl==true)
          {
          res.reduse();
          }
-     return res;
+               return res;
      }
 // метод вычитания
 Fraction subtraction(Fraction objF)
      {
      if(objF!=null|| objF.ch!=0){
+          if(this.flagObj==true)
+    {
+        this.reduse();
+    }
+     if(objF.flagObj==true)
+     {
+         objF.reduse();
+     }
          Fraction res = new Fraction (ch * objF.zn - objF.ch * zn,zn * objF.zn);
      if(flagCl==true)
          {
@@ -150,6 +166,14 @@ Fraction multiplication(Fraction objF)
 {
 if(objF!=null)
     {
+         if(this.flagObj==true)
+    {
+        this.reduse();
+    }
+     if(objF.flagObj==true)
+     {
+         objF.reduse();
+     }
      Fraction res = new Fraction (ch * objF.ch,zn * objF.zn);
     if(flagCl==true)
          {
