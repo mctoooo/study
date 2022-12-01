@@ -14,8 +14,21 @@ try{
 Fraction drobA = null; //ссылка
 Fraction drobB = null; //ссылка
 Fraction drobC = null; //ссылка
-Fraction drobD = null; //ссылка
+Fraction drobD = null; //ссылка*/
 
+//Fraction.Nod(45, 30);
+
+//Fraction.setflagCl(true);
+Fraction.setflagCl(false);
+drobA = new Fraction(44,44);
+drobA.setflagObj(true);
+System.out.println(drobA.toFormatString());
+
+drobA = new Fraction(4,44);
+System.out.println(drobA.toFormatString());
+
+drobA = new Fraction(64,12);
+System.out.println(drobA.toFormatString());
 //drobA.add(drobD);
 
 drobA = new Fraction(44,23);
@@ -32,14 +45,14 @@ System.out.println("drobA * drobC = " +drobFo.toFormatString());
 // изменяем флаг на уровне класса,при этом сокрящаться будут все дроби 
 // и результаты математических действий
 
-drobD.setflagCl(true);
-System.out.println("drobD + flaCl=true " +drobD.toFormatString());
+drobC.setflagObj(true);
+System.out.println("drobC + flagObj=true " +drobD.toFormatString());
 drobFo = drobA.multiplication(drobC);
 System.out.println("drobA * drobC = " +drobFo.toFormatString());
 
 //массив объектов
 
-/*Fraction[]ftArr = null;
+Fraction[]ftArr = null;
 ftArr = new Fraction[10]; // массив ссылок из 10 элементов
 for (int ix=0; ix<ftArr.length;ix++)
 {
@@ -56,7 +69,7 @@ for( Fraction fx : ftArr)
 }
 
 System.out.println("Count of Objects = "+ Fraction.getCountObject());
-*/
+
 if(drobA == drobB)
 System.out.println("Equal");
 else
